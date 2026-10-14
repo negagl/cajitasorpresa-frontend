@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Box, ApiResponse } from "../types";
 import { formatCOP } from "../utils/format";
+import { Link } from "react-router";
 
 export default function Catalogo() {
 	const [boxes, setBoxes] = useState<Box[]>([]);
@@ -35,6 +36,12 @@ export default function Catalogo() {
 					)}
 					<p className="whitespace-pre-line">{box.descripcion}</p>
 					<p className="font-bold">{formatCOP(box.precio_base)}</p>
+					<Link
+						to={`/pedido/${box.id}`}
+						className="block text-center rounded-lg bg-pink-600 px-4 py-2 font-semibold text-white"
+					>
+						Quiero este box!
+					</Link>
 				</div>
 			))}
 		</div>
