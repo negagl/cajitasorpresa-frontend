@@ -26,3 +26,26 @@ export interface Extra {
 export interface ApiResponse<T> {
 	data: T;
 }
+
+export interface ExtraInput {
+	extra_id: number;
+	cantidad: number;
+}
+
+export interface PersonalizacionInput {
+	categoria: string;
+	eleccion: string;
+}
+
+export interface CrearPedidoInput {
+	nombre_cliente: string;
+	telefono_cliente: string;
+	box_id?: number;
+	sabor_jugo?: string;
+	con_azucar?: boolean;
+	mensaje_tarjeta?: string;
+	foto_url?: string;
+	fecha_entrega: string;
+	extras?: ExtraInput[];
+	personalizacion?: PersonalizacionInput[];
+}
