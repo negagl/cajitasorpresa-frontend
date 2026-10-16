@@ -49,3 +49,28 @@ export interface CrearPedidoInput {
 	extras?: ExtraInput[];
 	personalizacion?: PersonalizacionInput[];
 }
+
+export interface ItemExtraPedido {
+	id: number;
+	pedido_id: number;
+	extra_id: number;
+	extra: Extra;
+	cantidad: number;
+}
+
+export interface PedidoAdmin {
+	id: number;
+	nombre_cliente: string;
+	telefono_cliente: string;
+	box_id?: number;
+	sabor_jugo?: string;
+	con_azucar?: boolean;
+	mensaje_tarjeta?: string;
+	foto_url?: string;
+	items_extra: ItemExtraPedido[];
+	personalizacion: PersonalizacionInput[];
+	precio_total: number;
+	fecha_pedido: string;
+	fecha_entrega: string;
+	estado: "pendiente" | "en proceso" | "entregado";
+}
